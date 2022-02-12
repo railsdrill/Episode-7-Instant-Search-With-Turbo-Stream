@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Users</h1>
+<%= form_with(url: search_users_path,data: { controller: 'submission', submission_target: "form" }) do |f| %>
+<%= f.label :search, "Search by username" %>
+<%= f.text_field :search ,data: { action: "input->submission#search" }  %>
+<% end %>
+  
+    <%= render "user", users: @users %>
+    
+
+<%= link_to "New user", new_user_path %>
